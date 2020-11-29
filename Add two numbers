@@ -1,0 +1,18 @@
+void setup()
+{
+Serial.begin(9600);
+}
+void loop() {
+int a = 5;
+int b = 4;
+int c;
+c = myAddfunction(a, b);
+Serial.println(c);
+delay(1000);
+}
+int myAddfunction(int i, int j)
+{
+int sum;
+sum = i + j;
+return sum;
+}
