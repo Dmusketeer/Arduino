@@ -1,0 +1,19 @@
+void setup()
+{
+Serial.begin(9600); // Set the baud rate to 9600
+pinMode(12,OUTPUT);
+}
+void loop()
+{
+String s1 = Serial.readString();// s1 is String type variable.
+Serial.print("Received Data => ");
+Serial.println(s1);//display same received Data back in serial monitor.
+if(s1.indexOf("on")>=0)
+{
+digitalWrite(12,HIGH);
+}
+if(s1.indexOf("off")>=0){
+digitalWrite(12,LOW);
+}
+delay(100);
+} 
