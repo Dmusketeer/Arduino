@@ -1,0 +1,15 @@
+#include <Servo.h>
+Servo servo;
+int angle = 0;
+int p = A0;
+void setup()
+{
+servo.attach(9);
+}
+void loop()
+{
+angle = analogRead(p);
+angle = map(angle, 0, 1023, 0, 180);
+servo.write(angle);
+delay(5);
+}
