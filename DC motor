@@ -1,0 +1,33 @@
+//3)  Perform an experiment using TMP36 sensor, DC motor & LED
+//- If the temperature >30, Turns ON the motor
+//- If the temperature <30, Turns OFF the motor and Turns on the LED 
+
+
+int sensorPin = A0;
+int celsius=0;
+double temp;
+void setup() {
+Serial.begin(9600);
+  pinMode(13,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(10,OUTPUT);
+    Serial.begin(9600);
+  digitalWrite(13,HIGH);
+}
+void loop() {
+celsius = map(((analogRead(sensorPin) - 20) * 3.04), 0,
+1023, -40, 125);
+  Serial.print("Temp: ");
+  Serial.print(celsius);
+  Serial.println(" *C");
+  if(celsius > 30 ){
+    digitalWrite(12,LOW);
+        digitalWrite(11,HIGH);
+        digitalWrite(10,LOW);
+    delay(100);
+  }else{
+  digitalWrite(12,HIGH);
+        digitalWrite(11,HIGH);
+        digitalWrite(10,HIGH);
+     delay(100);}}
